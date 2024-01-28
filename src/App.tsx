@@ -1,9 +1,7 @@
-import './App.css';
-
-import { Button } from './components/ui/button';
+import MainLayout from './components/layout/MainLayout';
 
 function App() {
-  return <Button>Hello</Button>;
+  return <MainLayout />;
 }
 
 export default App;
