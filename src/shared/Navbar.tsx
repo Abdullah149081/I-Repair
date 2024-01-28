@@ -13,7 +13,7 @@ function Navbar() {
     <Container>
       <header className="mt-4 h-16">
         <nav className="flex items-center justify-between">
-          <h2 className="text-3xl font-medium">IRepair</h2>
+          <h2 className="text-3xl">IRepair</h2>
           <div className="flex gap-5 ">
             <ul className="flex items-center justify-center gap-5">
               {navLinks.map((link) => (
