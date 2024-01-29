@@ -1,6 +1,36 @@
+import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 import Container from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
-import { NavLink } from 'react-router-dom';
+
+const animatedNav = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+
+    transition: {
+      duration: 0.1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const animatedNavChild = {
+  hidden: {
+    opacity: 0,
+    y: -50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 function Navbar() {
   const navLinks = [
@@ -10,23 +40,35 @@ function Navbar() {
   ];
 
   return (
-    <Container>
-      <header className="mt-4 h-16">
-        <nav className="flex items-center justify-between">
+    <header className="z-10 h-16 w-full  bg-white xl:fixed">
+      <Container className="mt-4">
+        <motion.nav
+          variants={animatedNav}
+          initial="hidden"
+          animate="visible"
+          className="flex items-center justify-between"
+        >
           <h2 className="text-3xl">IRepair</h2>
           <div className="flex gap-5 ">
-            <ul className="flex items-center justify-center gap-5">
+            <motion.ul className="flex items-center justify-center gap-5">
               {navLinks.map((link) => (
-                <li key={link.title} className="font-medium">
+                <motion.li
+                  variants={animatedNavChild}
+                  key={link.title}
+                  className="font-medium"
+                >
                   <NavLink to={link.path}>{link.title}</NavLink>
-                </li>
+                </motion.li>
               ))}
-            </ul>
-            <Button>Login</Button>
+            </motion.ul>
+            <motion.div variants={animatedNavChild}>
+              {' '}
+              <Button>Login</Button>
+            </motion.div>
           </div>
-        </nav>
-      </header>
-    </Container>
+        </motion.nav>
+      </Container>
+    </header>
   );
 }
 
