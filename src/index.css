@@ -80,4 +80,11 @@
   html {
     font-family: 'Poppins', sans-serif;
   }
+  h2 {
+    font-size: 3.75rem;
+    font-weight: 600;
+    @media screen and (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
 }
