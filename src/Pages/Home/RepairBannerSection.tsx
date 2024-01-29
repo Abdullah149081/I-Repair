@@ -1,6 +1,6 @@
+import { motion } from 'framer-motion';
 import mac from '@/assets/images/macbook-exposed.png';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 
 const intro = {
   hidden: {
@@ -10,8 +10,9 @@ const intro = {
     opacity: 1,
 
     transition: {
-      duration: 0.5,
-      staggerChildren: 0.5,
+      delay: 0.8,
+      duration: 0.8,
+      staggerChildren: 0.8,
     },
   },
 };
@@ -25,7 +26,30 @@ const introChild = {
     y: 0,
 
     transition: {
-      duration: 0.5,
+      duration: 0.8,
+    },
+  },
+};
+
+const macbookAnimation = {
+  initial: {
+    y: 0,
+    rotate: 0,
+    scale: 2,
+  },
+  animate: {
+    y: 20,
+    rotate: -30,
+    scale: 1,
+
+    transition: {
+      duration: 1.5,
+      y: {
+        repeat: Infinity,
+        repeatType: 'reverse',
+        ease: 'easeInOut',
+        duration: 1.5,
+      },
     },
   },
 };
@@ -36,7 +60,7 @@ const RepairBannerSection = () => {
       variants={intro}
       initial="hidden"
       animate="visible"
-      className="grid  xl:h-[calc(100vh-64px)] xl:grid-cols-2 xl:place-content-center"
+      className="grid  overflow-hidden pt-20 xl:h-[calc(100vh-64px)] xl:grid-cols-2 xl:place-content-center"
     >
       <div className=" space-y-5">
         <motion.h1
@@ -64,11 +88,16 @@ const RepairBannerSection = () => {
           <Button>Book a service </Button>
         </motion.div>
       </div>
-      <div className="mt-16  xl:mt-0">
+      <motion.div
+        variants={macbookAnimation}
+        initial="initial"
+        animate="animate"
+        className="mt-16  xl:mt-0"
+      >
         <figure className=" mx-auto w-3/4 xl:w-[500px]">
-          <img className="rotate-[-30deg] object-contain" src={mac} alt="mac" />
+          <img className="r object-contain" src={mac} alt="mac" />
         </figure>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
