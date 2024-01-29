@@ -60,7 +60,7 @@ const RepairBannerSection = () => {
       variants={intro}
       initial="hidden"
       animate="visible"
-      className="grid  overflow-hidden pt-20 xl:h-[calc(100vh-64px)] xl:grid-cols-2 xl:place-content-center"
+      className="grid  overflow-hidden pb-24 pt-20 xl:h-[calc(100vh-64px)] xl:grid-cols-2  xl:place-content-center"
     >
       <div className=" space-y-5">
         <motion.h1
@@ -72,7 +72,7 @@ const RepairBannerSection = () => {
         </motion.h1>
         <motion.p
           variants={introChild}
-          className="max-w-[50ch] text-lg text-dark-gray"
+          className="max-w-[50ch]  text-lg text-dark-gray"
         >
           Welcome to{' '}
           <span className="font-semibold text-primary-foreground">iRepair</span>
@@ -95,7 +95,7 @@ const RepairBannerSection = () => {
         className="mt-16  xl:mt-0"
       >
         <figure className=" mx-auto w-3/4 xl:w-[500px]">
-          <img className="r object-contain" src={mac} alt="mac" />
+          <img className="" src={mac} alt="mac" />
         </figure>
       </motion.div>
     </motion.div>
