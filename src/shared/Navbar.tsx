@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
 import Container from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const animatedNav = {
   hidden: {
@@ -37,6 +37,7 @@ function Navbar() {
     { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
     { title: 'Services', path: '/services' },
+    { title: 'Dashboard', path: '/admin' },
   ];
 
   return (
