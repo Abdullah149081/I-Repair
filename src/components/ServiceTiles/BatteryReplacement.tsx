@@ -1,5 +1,5 @@
-import useScrollGrow from '@/hooks/ScrollGrowHook';
 import { motion } from 'framer-motion';
+import useScrollGrow from '@/hooks/ScrollGrowHook';
 
 const BatteryReplacement = () => {
   const { style, componentRef } = useScrollGrow();
