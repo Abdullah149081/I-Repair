@@ -1,3 +1,4 @@
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import App from '@/App';
 import About from '@/Pages/About';
 import Home from '@/Pages/Home';
@@ -6,7 +7,6 @@ import DashBoard from '@/Pages/admin/DashBoard';
 import ServicesAdd from '@/Pages/admin/ServicesAdd';
 import ServicesList from '@/Pages/admin/ServicesList';
 import DashBoardLayout from '@/components/layout/DashBoardLayout';
-import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {

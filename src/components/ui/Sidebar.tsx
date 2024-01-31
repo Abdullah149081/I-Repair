@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
 import { BadgePlus, Home, LayoutDashboard, ListOrdered } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const navAdmin = [
