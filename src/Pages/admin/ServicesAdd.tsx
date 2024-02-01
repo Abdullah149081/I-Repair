@@ -47,7 +47,7 @@ const ServicesAdd = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await mutateAsync(servicesAdd);
+    await mutateAsync();
 
     setTimeout(() => {
       (e.target as HTMLFormElement).reset();
