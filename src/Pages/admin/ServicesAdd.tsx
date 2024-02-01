@@ -27,10 +27,7 @@ const ServicesAdd = () => {
       setError(
         err?.response.data.errorSources[0].message || err.response.data.error
       );
-      console.error(
-        'Error from server:',
-        err?.response.data.errorSources[0].message || err.response.data.error
-      );
+      console.error('Error from server:', err);
     },
   });
 
